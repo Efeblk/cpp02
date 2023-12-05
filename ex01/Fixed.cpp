@@ -10,11 +10,12 @@ Fixed::Fixed(const Fixed &fixed) {
 }
 
 Fixed::Fixed(const int number) {
-
+    number << this->fractionalBits;
+    this->fixedPointValue = number;
 }
 
 Fixed::Fixed(const float number){
-
+    this->fixedPointValue = roundf(number * (1 << this->fractionalBits));
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed) {
