@@ -84,6 +84,17 @@ Fixed Fixed::operator++(int) {
     return tmp;
 }
 
+Fixed &Fixed::operator--() {
+    --this->fixedPointValue;
+    return *this;
+}
+
+Fixed Fixed::operator--(int) {
+    Fixed tmp(*this);
+    --(*this);
+    return tmp;
+}
+
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
@@ -103,4 +114,22 @@ float  Fixed::toFloat( void ) const {
 
 int Fixed::toInt(void) const {
     return this->fixedPointValue >> this->fractionalBits;
+}
+
+//min//max -----------------------------------------------------
+
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+    return a < b ? a : b;
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+    return a < b ? a : b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
+    return a > b ? a : b;
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
+    return a > b ? a : b;
 }
