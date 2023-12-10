@@ -16,10 +16,11 @@ Fixed::Fixed(const int number) {
 
 Fixed::Fixed(const float number){
     this->fixedPointValue = roundf(number * (1 << this->fractionalBits));
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed) {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &fixed) {
         this->fixedPointValue = fixed.getRawBits();
     }

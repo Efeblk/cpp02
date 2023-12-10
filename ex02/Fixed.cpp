@@ -20,7 +20,7 @@ Fixed::Fixed(const float number){
 
 // OPS --------------------------------------------------------
 Fixed &Fixed::operator=(const Fixed &fixed) {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &fixed) {
         this->fixedPointValue = fixed.getRawBits();
     }

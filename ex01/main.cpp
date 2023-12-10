@@ -15,5 +15,9 @@ int main( void ) {
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+    Fixed test;
+    test = Fixed(5.6565656565f);
+    std::cout << "test is " << test.getRawBits() << std::endl;
+    std::cout << "test is " << test << std::endl;
     return 0;
 }
